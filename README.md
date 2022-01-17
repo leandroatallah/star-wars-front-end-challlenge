@@ -10,7 +10,7 @@ The application was developed with:
 - [Jest](https://jestjs.io/)
 - [ESlint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
-Demo on Netlify: []().
+Demo on Netlify: [https://star-wars-force-alignment.netlify.app/](https://star-wars-force-alignment.netlify.app/).
 
 ## API
 

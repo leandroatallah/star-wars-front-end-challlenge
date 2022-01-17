@@ -20,6 +20,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
+    "mini-css-extract-plugin": "2.4.5",
     "msw": "^0.36.4",
     "node-fetch": "^3.1.1",
     "react": "^17.0.2",

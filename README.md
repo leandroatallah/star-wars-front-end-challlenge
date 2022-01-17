@@ -8,7 +8,7 @@ The application was developed with:
 - [Redux](https://redux.js.org/)
 - [Styled Components](https://styled-components.com/)
 - [Jest](https://jestjs.io/)
-- [ESlint](https://eslint.org/) and [Prettier](https://prettier.io/)]
+- [ESlint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
 Demo on Netlify: []().
 
@@ -18,7 +18,7 @@ All the content was made fetching [SWAPI](https://swapi.dev/) a famous Star Wars
 
 ## Guide
 
-- Clone this repository `git clone `
+- Clone this repository `git clone git@github.com:leandroatallah/star-wars-front-end-challlenge.git`
 
 ## Commands
 

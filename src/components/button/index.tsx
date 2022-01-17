@@ -35,6 +35,11 @@ export const ButtonStyle = styled.button<ButtonProps>`
     }};
     cursor: ${props => props.loading ? 'not-allowed' : 'pointer'};
     pointer-events: ${props => props.loading ? 'none' : 'auto'};
+    transition: all .2s ease-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
 
     svg {
         display: ${props => props.loading ? 'inline-block' : 'none'};

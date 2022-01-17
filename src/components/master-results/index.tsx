@@ -1,10 +1,19 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 import Button from '../button'
 import imgVader from '../../images/darth-vader.png'
 import imgLuke from '../../images/luke-skywalker.png'
 import { THEME_DARK_SIDE } from '../../config'
 import { setTheme } from '../../store/actions/themeAction'
+
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`
 
 export const BackButton = styled.button<ThemeStyle>`
     display: inline-flex;
@@ -26,7 +35,8 @@ export const BackButton = styled.button<ThemeStyle>`
 `
 
 export const Inner = styled.div<ThemeStyle>`
-    margin: 175px auto 0;
+    padding-top: 175px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,21 +49,32 @@ export const Inner = styled.div<ThemeStyle>`
         font-weight: 400;
         line-height: 1.218;
         letter-spacing: 0em;
+        margin-bottom: 40px;
         
         strong {
             font-weight: 700;
+
+            @media screen and (max-width: 800px) {
+                display: block;
+            }
         }
     }
 `
 
-export const Section = styled.section<ThemeStyle>`
-    background-color: ${props => props.themeStyle === THEME_DARK_SIDE ? props.theme.colors.black : props.theme.colors.yellow};
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+export const MasterWrapper = styled.div`
     text-align: center;
+
+    @media screen and (max-width: 800px) {
+        order: -1;
+    }
+`
+
+export const Section = styled.section<ThemeStyle>`
+    position: relative;
+    background-color: ${props => props.themeStyle === THEME_DARK_SIDE ? props.theme.colors.black : props.theme.colors.yellow};
+    text-align: center;
+    padding-bottom: 285px;
+    animation: ${fadeIn} .5s ease-in-out;
 
     ${BackButton} {
         color: ${props => props.themeStyle === THEME_DARK_SIDE ? props.theme.colors.white : props.theme.colors.black};
@@ -73,7 +94,12 @@ export const Section = styled.section<ThemeStyle>`
 export const MasterImg = styled.img`
     display: block;
     border-radius: 50%;
-    margin: 90px 0 50px;
+    margin: 90px auto 50px;
+
+    @media screen and (max-width: 800px) {
+        margin: 20px auto 30px;
+        max-width: 300px;
+    }
 `
 
 type ThemeStyle = {
@@ -101,9 +127,10 @@ const MasterResults = ({ theme, setNewTheme }: MasterProps): JSX.Element => {
             <Inner>
                 <Button size="sm" onClick={() => { setNewTheme('') }}>choose your path again, Padawan</Button>
 
-                <MasterImg src={theme === THEME_DARK_SIDE ? imgVader : imgLuke} alt="" />
-
-                <h2>Your master is <strong>{theme === THEME_DARK_SIDE ? 'Darth Vader' : 'Luke Skywalker'}</strong></h2>
+                <MasterWrapper>
+                    <MasterImg src={theme === THEME_DARK_SIDE ? imgVader : imgLuke} alt="" />
+                    <h2>Your master is <strong>{theme === THEME_DARK_SIDE ? 'Darth Vader' : 'Luke Skywalker'}</strong></h2>
+                </MasterWrapper>
             </Inner>
         </Section>
     )

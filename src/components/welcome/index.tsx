@@ -9,6 +9,10 @@ export const Section = styled.section`
     margin-top: 210px;
     text-align: center;
     color: ${props => props.theme.colors.blue};
+    
+    @media screen and (max-width: 800px) {
+        margin-top: 175px;
+    }
 
     h1 {
         font-size: 72px;
@@ -16,8 +20,24 @@ export const Section = styled.section`
         margin-bottom: 7px;
         font-weight: 400;
 
+        br {
+            display: none;
+
+            @media (max-width: 800px) {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            font-size: 52px;
+        }
+        
         strong{
             font-weight: 700;
+            
+            @media screen and (max-width: 800px) {
+                font-size: 56px;
+            }
         }
     }
     h2 {
@@ -27,6 +47,10 @@ export const Section = styled.section`
         letter-spacing: calc(14px * 0.35);
         text-transform: uppercase;
         margin-bottom: 162px;
+        
+        @media screen and (max-width: 800px) {
+            margin-bottom: 90px;
+        }
     }
 `
 
@@ -125,7 +149,7 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
 
     return (
         <Section data-testid="welcome">
-            <h1>Welcome to <strong>iClinic</strong></h1>
+            <h1>Welcome <br />to <strong>iClinic</strong></h1>
             <h2>Frontend Challenge</h2>
             <Button onClick={() => { void handleStart() }} loading={isLoading ? 1 : 0}>S T A R T</Button>
 

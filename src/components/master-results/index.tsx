@@ -54,7 +54,7 @@ export const Inner = styled.div<ThemeStyle>`
         strong {
             font-weight: 700;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 799px) {
                 display: block;
             }
         }
@@ -64,7 +64,7 @@ export const Inner = styled.div<ThemeStyle>`
 export const MasterWrapper = styled.div`
     text-align: center;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 799px) {
         order: -1;
     }
 `
@@ -96,7 +96,7 @@ export const MasterImg = styled.img`
     border-radius: 50%;
     margin: 90px auto 50px;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 799px) {
         margin: 20px auto 30px;
         max-width: 300px;
     }

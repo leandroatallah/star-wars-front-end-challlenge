@@ -10,7 +10,7 @@ export const Section = styled.section`
     text-align: center;
     color: ${props => props.theme.colors.blue};
     
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 799px) {
         margin-top: 175px;
     }
 
@@ -23,19 +23,19 @@ export const Section = styled.section`
         br {
             display: none;
 
-            @media (max-width: 800px) {
+            @media (max-width: 799px) {
                 display: block;
             }
         }
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 799px) {
             font-size: 52px;
         }
         
         strong{
             font-weight: 700;
             
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 799px) {
                 font-size: 56px;
             }
         }
@@ -48,7 +48,7 @@ export const Section = styled.section`
         text-transform: uppercase;
         margin-bottom: 162px;
         
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 799px) {
             margin-bottom: 90px;
         }
     }

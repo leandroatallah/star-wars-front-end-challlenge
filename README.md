@@ -1,63 +1,51 @@
-![Welcome](logo-small.png?raw=true "Bem vindo!")
-# Desafio de front-end iClinic
+- [x] Install Redux
+- [x] Config Redux
+- [x] Config tests
+- [x] TDD Welcome
 
-Bem vindo à bordo, Padawan.
+# Getting Started with Create React App
 
-Nesse desafio, você deve consumir a SWAPI (Uma famosa api do Star Wars).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Você deve fazer duas requisições **ao mesmo tempo** através do clique de um botão:
-- `https://swapi.dev/api/people/1`  -> Recupera informações do lado da luz, seu mestre será Luke Skywalker.
-- `https://swapi.dev/api/people/4`  -> Recupera informações do lado sombrio, seu mestre será Darth Vader. 
+## Available Scripts
 
-Com base no **tempo de resposta do serviço** e no seu alinhamento da “força”, aquela requisição que **retornar os dados primeiro** irá determinar quem será seu mestre e em que lado da força você está alinhado.
+In the project directory, you can run:
 
-## UI
-Nosso time já elaborou as telas no Figma, você pode visualizar uma apresentação de como funciona [**aqui**](https://www.figma.com/proto/lvmezOyyLVXgUQxXGgcGT6/iClinic-Frontend-Challenge?node-id=5%3A5&scaling=min-zoom). 
+### `yarn start`
 
-Para informações de fontes, cores, espaçamentos, clique [**aqui**](https://www.figma.com/file/lvmezOyyLVXgUQxXGgcGT6/iClinic-Frontend-Challenge?node-id=0%3A1) (você deve criar uma conta gratuita no Figma).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-As imagens dos mestres, estão localizadas nesse repositório em `images-masters`.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Sua UI deve funcionar da seguinte forma:
+### `yarn test`
 
-- O botão "start" e "choose your path again, Padawan", deve chamar as duas requisições e retornar a primeira resposta, conforme descrito acima. 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Na segunda tela do mestre, sua imagem deverá ser exibida no **centro da tela**, juntamente com **seu nome** e **cor de fundo correspondente** (preta para o lado sombrio e amarelo para o lado da luz).
+### `yarn build`
 
-- Ainda nessa segunda tela, deve existir um **link para voltar** para a página de boas vindas do início do desafio.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- O botão para escolher novamente seu caminho na força apresentado na segunda tela, deve ser **desativado** quando uma **requisição estiver em andamento** e também apresentar um feedback visual para o usuário (sugestão: ajustar opacidade do botão para .5).
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- Na versão mobile, atente-se pelo fato de ser responsiva para larguras de tela menores que `800px`.
-Repare também que foi alterada a ordem de apresentação do **nome do mestre**, **botão para chamar novamente a força** e **imagem**.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Testes são essenciais, foque em garantir a experiência do usuário com testes que façam sentido.
+### `yarn eject`
 
-### Desktop
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-> Tela de boas vindas.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-![Welcome](bem-vindo.png?raw=true "Bem vindo!")
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-> Tela do lado sombrio da força.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-![Dark Side](dark-side.png?raw=true "Dark side")
+## Learn More
 
-> Tela do lado da luz.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-![Light Side](light-side.png?raw=true "Light side")
-
->  Versão responsiva `< 800px`.
-
-![Dark Side Mobile](dark-side-mobile.png?raw=true "Dark side mobile")
-
-## Hospedagem
-O código fonte deve ser hospedado em algum repositório Git aberto para que possamos visualizá-lo, recomendamos o Github.
-Para avaliarmos a implementação em funcionamento, sugerimos o Github pages, Netlify, now.sh, AWS Amplify, etc.
-
-## O que vamos avaliar? (importante)
-
-Vamos avaliar conhecimentos em React, implementação e qualidade dos testes, legibilidade e organização do código (clean code), atenção aos detalhes (pixel perfect), uso eficiente de gerenciamento de estado e da linguagem Javascript, qualidade da implementação dos estilos, capacidade de compreender o contexto do desafio e de propor soluções eficientes.
-
-
-Boa sorte! Que a força esteja com você.
+To learn React, check out the [React documentation](https://reactjs.org/).

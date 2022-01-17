@@ -1,0 +1,3 @@
+export const CHANGE_THEME = 'CHANGE_THEME'
+export const THEME_DARK_SIDE = 'THEME_DARK_SIDE'
+export const THEME_LIGHT_SIDE = 'THEME_LIGHT_SIDE'

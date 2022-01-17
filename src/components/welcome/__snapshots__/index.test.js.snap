@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Welcome /> Render with redux 1`] = `
+.c1 {
+  background-color: #2C97D1;
+  display: inline-block;
+  height: 56px;
+  font-size: 18px;
+  line-height: 1.218;
+  font-weight: 700;
+  padding: 0 37px;
+  border-radius: 10px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.c0 {
+  margin-top: 210px;
+  text-align: center;
+  color: #2C97D1;
+}
+
+.c0 h1 {
+  font-size: 72px;
+  line-height: 1.2;
+  margin-bottom: 7px;
+  font-weight: 400;
+}
+
+.c0 h1 strong {
+  font-weight: 700;
+}
+
+.c0 h2 {
+  font-size: 14px;
+  line-height: 1.218;
+  font-weight: 400;
+  -webkit-letter-spacing: calc(14px * 0.35);
+  -moz-letter-spacing: calc(14px * 0.35);
+  -ms-letter-spacing: calc(14px * 0.35);
+  letter-spacing: calc(14px * 0.35);
+  text-transform: uppercase;
+  margin-bottom: 162px;
+}
+
+<section
+  class="c0"
+  data-testid="welcome"
+>
+  <h1>
+    Welcome to 
+    <strong>
+      iClinic
+    </strong>
+  </h1>
+  <h2>
+    Frontend Challenge
+  </h2>
+  <button
+    class="c1"
+    data-testid="button"
+    type="button"
+  >
+    S T A R T
+  </button>
+</section>
+`;

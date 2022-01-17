@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MasterResults /> Render with redux 1`] = `
+.c0 {
+  background-color: #2C97D1;
+  display: inline-block;
+  height: 56px;
+  font-size: 16px;
+  line-height: 1.218;
+  font-weight: 700;
+  padding: 0 37px;
+  border-radius: 10px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+<button
+  class="c0"
+  data-testid="button"
+  type="button"
+>
+  choose your path again, Padawan
+</button>
+`;

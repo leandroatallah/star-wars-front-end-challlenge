@@ -44,7 +44,7 @@ describe('<App />', () => {
         )
         const welcome = getByTestId('welcome')
         const button = welcome.querySelector('button')
-        fireEvent.click(button)
+
     })
 
     // it('should fetch swapi and show dark side master if get dark side result', () => {

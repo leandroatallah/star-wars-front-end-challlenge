@@ -3,7 +3,18 @@
 exports[`<Welcome /> Render with redux 1`] = `
 .c1 {
   background-color: #2C97D1;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 56px;
   font-size: 18px;
   line-height: 1.218;
@@ -12,6 +23,16 @@ exports[`<Welcome /> Render with redux 1`] = `
   border-radius: 10px;
   color: #FFF;
   cursor: pointer;
+  pointer-events: auto;
+}
+
+.c1 svg {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 
 .c0 {
@@ -43,6 +64,18 @@ exports[`<Welcome /> Render with redux 1`] = `
   margin-bottom: 162px;
 }
 
+.c2 {
+  opacity: 0;
+  display: inline-block;
+  margin-top: 40px;
+  border: 1px solid #2C97D1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.218;
+}
+
 <section
   class="c0"
   data-testid="welcome"
@@ -61,7 +94,41 @@ exports[`<Welcome /> Render with redux 1`] = `
     data-testid="button"
     type="button"
   >
-    S T A R T
+    <span>
+      S T A R T
+    </span>
+    <svg
+      preserveAspectRatio="xMidYMid"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        fill="none"
+        r="35"
+        stroke="#ffffff"
+        stroke-dasharray="164.93361431346415 56.97787143782138"
+        stroke-width="10"
+      >
+        <animatetransform
+          attributeName="transform"
+          dur="1s"
+          keyTimes="0;1"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0 50 50;360 50 50"
+        />
+      </circle>
+    </svg>
   </button>
+  <div>
+    <div
+      class="c2"
+    >
+      Something went wrong, please try again.
+    </div>
+  </div>
 </section>
 `;

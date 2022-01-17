@@ -82,24 +82,24 @@ type ThemeStyle = {
 
 type MasterProps = {
     theme: string
-    setTheme: (theme: string) => void
+    setNewTheme: (theme: string) => void
 }
 
 type ThemeState = {
     theme: string
 }
 
-const MasterResults = ({ theme, setTheme }: MasterProps): JSX.Element => {
+const MasterResults = ({ theme, setNewTheme }: MasterProps): JSX.Element => {
     return (
         <Section themeStyle={theme} data-testid="master-results">
-            <BackButton onClick={() => { setTheme('') }}>
+            <BackButton onClick={() => { setNewTheme('') }}>
                 <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M31.0001 11.3333H6.69006L15.5117 2.51166L13.1551 0.154999L0.310059 13L13.1551 25.845L15.5117 23.4883L6.69006 14.6667H31.0001V11.3333Z" />
                 </svg>
                 <span>back</span>
             </BackButton>
             <Inner>
-                <Button size="sm" onClick={() => { setTheme('') }}>choose your path again, Padawan</Button>
+                <Button size="sm" onClick={() => { setNewTheme('') }}>choose your path again, Padawan</Button>
 
                 <MasterImg src={theme === THEME_DARK_SIDE ? imgVader : imgLuke} alt="" />
 
@@ -115,8 +115,8 @@ const mapStateToProps = (state: ThemeState) => ({
 
 const mapDispatchToProps = (dispatch: (arg0: { type: string; payload: string }) => unknown) => {
     return {
-        setTheme() {
-            const action = setTheme('')
+        setNewTheme(newTheme: string): void {
+            const action = setTheme(newTheme)
             dispatch(action)
         },
     }

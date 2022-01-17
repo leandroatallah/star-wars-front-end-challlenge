@@ -16,11 +16,14 @@ const fadeIn = keyframes`
 `
 
 export const BackButton = styled.button<ThemeStyle>`
+    width: 129px;
+    height: 47px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 45px;
-    left: 52px;
+    top: 35px;
+    left: 48px;
     padding: 0;
     border: none;
     background: none;
@@ -28,19 +31,32 @@ export const BackButton = styled.button<ThemeStyle>`
 
     span {
         display: inline-block;
-        margin-left: 14px;
+        padding-left: 20px;
         font-size: 18px;
         line-height: 1.22;
     }
 `
 
+export const AnchorBack = styled.div`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 9.31px;
+    display: flex;
+    align-items: center;
+`
+
 export const Inner = styled.div<ThemeStyle>`
-    padding-top: 175px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 60px 0;
+
+    @media screen and (max-width: 799px) {
+        padding: 190px 0 100px;
+    }
 
     h2 {
         font-family: Montserrat;
@@ -71,10 +87,13 @@ export const MasterWrapper = styled.div`
 
 export const Section = styled.section<ThemeStyle>`
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: ${props => props.themeStyle === THEME_DARK_SIDE ? props.theme.colors.black : props.theme.colors.yellow};
     text-align: center;
-    padding-bottom: 285px;
     animation: ${fadeIn} .5s ease-in-out;
+    min-height: 100vh;
 
     ${BackButton} {
         color: ${props => props.themeStyle === THEME_DARK_SIDE ? props.theme.colors.white : props.theme.colors.black};
@@ -94,11 +113,13 @@ export const Section = styled.section<ThemeStyle>`
 export const MasterImg = styled.img`
     display: block;
     border-radius: 50%;
-    margin: 90px auto 50px;
+    margin: 91px auto 50px;
+    max-width: 380px;
+    height: auto;
 
     @media screen and (max-width: 799px) {
         margin: 20px auto 30px;
-        max-width: 300px;
+        max-width: 302px;
     }
 `
 
@@ -119,9 +140,11 @@ const MasterResults = ({ theme, setNewTheme }: MasterProps): JSX.Element => {
     return (
         <Section themeStyle={theme} data-testid="master-results">
             <BackButton onClick={() => { setNewTheme('') }}>
-                <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M31.0001 11.3333H6.69006L15.5117 2.51166L13.1551 0.154999L0.310059 13L13.1551 25.845L15.5117 23.4883L6.69006 14.6667H31.0001V11.3333Z" />
-                </svg>
+                <AnchorBack>
+                    <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M31.0001 11.3333H6.69006L15.5117 2.51166L13.1551 0.154999L0.310059 13L13.1551 25.845L15.5117 23.4883L6.69006 14.6667H31.0001V11.3333Z" />
+                    </svg>
+                </AnchorBack>
                 <span>back</span>
             </BackButton>
             <Inner>

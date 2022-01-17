@@ -64,18 +64,6 @@ exports[`<Welcome /> Render with redux 1`] = `
   margin-bottom: 162px;
 }
 
-.c2 {
-  opacity: 0;
-  display: inline-block;
-  margin-top: 40px;
-  border: 1px solid #2C97D1;
-  padding: 10px 16px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.218;
-}
-
 <section
   class="c0"
   data-testid="welcome"
@@ -92,6 +80,7 @@ exports[`<Welcome /> Render with redux 1`] = `
   <button
     class="c1"
     data-testid="button"
+    loading="0"
     type="button"
   >
     <span>
@@ -123,12 +112,5 @@ exports[`<Welcome /> Render with redux 1`] = `
       </circle>
     </svg>
   </button>
-  <div>
-    <div
-      class="c2"
-    >
-      Something went wrong, please try again.
-    </div>
-  </div>
 </section>
 `;

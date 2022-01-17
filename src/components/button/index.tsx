@@ -52,7 +52,7 @@ type ButtonProps = {
     size?: string
     children?: React.ReactNode
     onClick?: () => void
-    loading?: boolean
+    loading?: number
 }
 
 type ThemeState = {
@@ -69,7 +69,7 @@ const Button = (props: ButtonProps): JSX.Element => {
             onClick={onClick}
             themeStyle={theme}
             data-testid="button"
-            loading={loading ? true : undefined}
+            loading={loading ? 1 : 0}
         >
             <span>{children}</span>
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">

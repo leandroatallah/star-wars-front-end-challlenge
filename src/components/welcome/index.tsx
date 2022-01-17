@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Button from '../../components/button'
 import { connect } from 'react-redux'
 import { THEME_DARK_SIDE, THEME_LIGHT_SIDE } from '../../config'
@@ -30,8 +30,18 @@ export const Section = styled.section`
     }
 `
 
-const WarningAlert = styled.div<{ show: boolean }>`
-    opacity: ${props => props.show ? '1' : '0'};
+const fadeUp = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const WarningAlert = styled.div`
     display: inline-block;
     margin-top: 40px;
     border: 1px solid ${props => props.theme.colors.blue};
@@ -40,6 +50,7 @@ const WarningAlert = styled.div<{ show: boolean }>`
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.218;
+    animation: ${fadeUp} 0.5s ease-in-out;
 `
 
 type Props = {
@@ -56,21 +67,21 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
     const [dark, setDark] = useState<number | null>(null)
     const [warning, setWarning] = useState(false)
 
-    function resetState(): void {
+    function resetState() {
         setWarning(false)
         setLight(null)
         setDark(null)
         setIsLoading(false)
     }
 
-    async function handleStart(): Promise<void> {
+    function handleStart() {
         resetState()
         setIsLoading(true)
 
         let start: number
 
         start = performance.now()
-        await fetch('https://swapi.dev/api/people/1').then(res => {
+        fetch('https://swapi.dev/api/people/1').then(res => {
             return res.json()
         }).then(res => {
             const end = performance.now()
@@ -83,7 +94,7 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
         })
 
         start = performance.now()
-        await fetch('https://swapi.dev/api/people/4').then(res => {
+        fetch('https://swapi.dev/api/people/4').then(res => {
             return res.json()
         }).then(res => {
             const end = performance.now()
@@ -108,7 +119,7 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
             } else {
                 void handleStart()
             }
-            console.log(`Light side: ${light}ms - Dark side: ${dark}ms`)
+            console.log(`Light side: ${light} ms - Dark side: ${dark} ms`)
         }
     }, [light, dark])
 
@@ -116,11 +127,13 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
         <Section data-testid="welcome">
             <h1>Welcome to <strong>iClinic</strong></h1>
             <h2>Frontend Challenge</h2>
-            <Button onClick={() => { void handleStart() }} loading={isLoading}>S T A R T</Button>
+            <Button onClick={() => { void handleStart() }} loading={isLoading ? 1 : 0}>S T A R T</Button>
 
-            <div>
-                <WarningAlert show={warning}>Something went wrong, please try again.</WarningAlert>
-            </div>
+            {warning &&
+                <div>
+                    <WarningAlert data-testid="warning">Something went wrong, please try again.</WarningAlert>
+                </div>
+            }
         </Section>
     )
 }

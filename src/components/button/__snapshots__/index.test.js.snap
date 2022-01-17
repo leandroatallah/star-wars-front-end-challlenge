@@ -38,6 +38,7 @@ exports[`<Button /> Render with redux 1`] = `
 <button
   class="c0"
   data-testid="button"
+  loading="0"
   type="button"
 >
   <span>

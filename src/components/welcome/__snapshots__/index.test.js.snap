@@ -24,6 +24,12 @@ exports[`<Welcome /> Render with redux 1`] = `
   color: #FFF;
   cursor: pointer;
   pointer-events: auto;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.c1:hover {
+  opacity: 0.8;
 }
 
 .c1 svg {
@@ -48,6 +54,10 @@ exports[`<Welcome /> Render with redux 1`] = `
   font-weight: 400;
 }
 
+.c0 h1 br {
+  display: none;
+}
+
 .c0 h1 strong {
   font-weight: 700;
 }
@@ -64,12 +74,44 @@ exports[`<Welcome /> Render with redux 1`] = `
   margin-bottom: 162px;
 }
 
+@media screen and (max-width:799px) {
+  .c0 {
+    margin-top: 175px;
+  }
+}
+
+@media (max-width:799px) {
+  .c0 h1 br {
+    display: block;
+  }
+}
+
+@media screen and (max-width:799px) {
+  .c0 h1 {
+    font-size: 52px;
+  }
+}
+
+@media screen and (max-width:799px) {
+  .c0 h1 strong {
+    font-size: 56px;
+  }
+}
+
+@media screen and (max-width:799px) {
+  .c0 h2 {
+    margin-bottom: 90px;
+  }
+}
+
 <section
   class="c0"
   data-testid="welcome"
 >
   <h1>
-    Welcome to 
+    Welcome 
+    <br />
+    to 
     <strong>
       iClinic
     </strong>

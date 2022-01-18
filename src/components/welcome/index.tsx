@@ -91,15 +91,10 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
     const [dark, setDark] = useState<number | null>(null)
     const [warning, setWarning] = useState(false)
 
-    function resetState() {
+    function handleStart() {
         setWarning(false)
         setLight(null)
         setDark(null)
-        setIsLoading(false)
-    }
-
-    function handleStart() {
-        resetState()
         setIsLoading(true)
 
         let start: number
@@ -112,7 +107,9 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
             setLight(end - start)
             return res
         }).catch(() => {
-            resetState()
+            setLight(null)
+            setDark(null)
+            setIsLoading(false)
             setWarning(true)
             return
         })
@@ -125,25 +122,35 @@ const Welcome = ({ setNewTheme }: Props): JSX.Element => {
             setDark(end - start)
             return res
         }).catch(() => {
-            resetState()
+            setLight(null)
+            setDark(null)
+            setIsLoading(false)
             setWarning(true)
             return
         })
     }
 
     useEffect(() => {
+        const isMounted = true
+
         if (light && dark) {
             setIsLoading(false)
 
-            if (light < dark) {
-                setNewTheme(THEME_LIGHT_SIDE)
+            if (isMounted) {
+                if (light < dark) {
+                    setNewTheme(THEME_LIGHT_SIDE)
+                }
+                else if (dark < light) {
+                    setNewTheme(THEME_DARK_SIDE)
+                } else {
+                    void handleStart()
+                }
+                console.log(`Light side: ${light} ms - Dark side: ${dark} ms`)
             }
-            else if (dark < light) {
-                setNewTheme(THEME_DARK_SIDE)
-            } else {
-                void handleStart()
-            }
-            console.log(`Light side: ${light} ms - Dark side: ${dark} ms`)
+        }
+
+        return () => {
+            isMounted && setIsLoading(false)
         }
     }, [light, dark])
 

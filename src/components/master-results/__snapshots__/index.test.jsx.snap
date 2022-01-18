@@ -24,6 +24,12 @@ exports[`<MasterResults /> Render with redux 1`] = `
   color: #FFF;
   cursor: pointer;
   pointer-events: auto;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.c0:hover {
+  opacity: 0.8;
 }
 
 .c0 svg {
@@ -33,6 +39,22 @@ exports[`<MasterResults /> Render with redux 1`] = `
   margin: 0;
   margin-left: 10px;
   vertical-align: middle;
+}
+
+@media screen and (max-width:799px) {
+
+}
+
+@media screen and (max-width:799px) {
+
+}
+
+@media screen and (max-width:799px) {
+
+}
+
+@media screen and (max-width:799px) {
+
 }
 
 <button

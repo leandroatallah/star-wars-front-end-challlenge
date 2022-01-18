@@ -24,6 +24,12 @@ exports[`<Button /> Render with redux 1`] = `
   color: #FFF;
   cursor: pointer;
   pointer-events: auto;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.c0:hover {
+  opacity: 0.8;
 }
 
 .c0 svg {

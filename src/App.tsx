@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { connect } from 'react-redux'
 import './app.css'
@@ -29,19 +29,21 @@ type AppProps = {
 
 const App = (props: AppProps): JSX.Element => {
   return (
-    <div className="App">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>iClinic Frontend Challenge</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-      </Helmet>
-      <ThemeProvider theme={themeColors}>
-        <GlobalStyle />
-        {props.theme === '' ? <Welcome /> : <MasterResults />}
-      </ThemeProvider>
-    </div>
+    <HelmetProvider>
+      <div className="App">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>iClinic Frontend Challenge</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+        </Helmet>
+        <ThemeProvider theme={themeColors}>
+          <GlobalStyle />
+          {props.theme === '' ? <Welcome /> : <MasterResults />}
+        </ThemeProvider>
+      </div>
+    </HelmetProvider>
   )
 }
 

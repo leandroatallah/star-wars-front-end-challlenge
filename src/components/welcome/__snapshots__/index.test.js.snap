@@ -109,15 +109,10 @@ exports[`<Welcome /> Render with redux 1`] = `
   data-testid="welcome"
 >
   <h1>
-    Welcome 
-    <br />
-    to 
-    <strong>
-      iClinic
-    </strong>
+    Force Alignment
   </h1>
   <h2>
-    Frontend Challenge
+    Star Wars
   </h2>
   <button
     class="c1"

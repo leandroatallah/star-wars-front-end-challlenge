@@ -1,16 +1,17 @@
 # Star Wars force alignment | Front-End Challenge
 
+Demo on Netlify: [https://star-wars-force-alignment.netlify.app/](https://star-wars-force-alignment.netlify.app/).
+
 This is a project to discover your Star Wars force alignment based on this [Front-End Challenge](https://github.com/iclinic/challenge-front).
 
 The application was developed with:
+
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/) bootstrapped with [create-react-app](https://create-react-app.dev/)
 - [Redux](https://redux.js.org/)
 - [Styled Components](https://styled-components.com/)
 - [Jest](https://jestjs.io/)
 - [ESlint](https://eslint.org/) and [Prettier](https://prettier.io/)
-
-Demo on Netlify: [https://star-wars-force-alignment.netlify.app/](https://star-wars-force-alignment.netlify.app/).
 
 ## API
 
